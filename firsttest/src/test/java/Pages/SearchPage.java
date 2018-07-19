@@ -12,18 +12,16 @@ public class SearchPage {
         this.driver = driver;
     }
 
+    private By searchString = By.cssSelector("input[id=\"text\"]");
+    private By searchButton = By.cssSelector("button[role=\"button\"][type=\"submit\"]");
+
+
     public void search(String str){
-        WebElement searchString = driver.findElement(By.cssSelector("input[id=\"text\"]"));
-        searchString.click();
-        searchString.clear();
-        searchString.sendKeys(str);
-        WebElement searchButton = driver.findElement(By.cssSelector("button[role=\"button\"][type=\"submit\"]"));
-        searchButton.click();
+        driver.findElement(searchString);
+        driver.findElement(searchString).click();
+        driver.findElement(searchString).clear();
+        driver.findElement(searchString).sendKeys(str);
+        driver.findElement(searchButton).click();
     }
 
-    public String  getLinkText() {
-        WebElement result = driver.findElement(By.cssSelector("a[accesskey=\"1\"]"));
-        String linkText = result.getText();
-        return linkText;
-    }
 }

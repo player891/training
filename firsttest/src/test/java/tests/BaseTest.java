@@ -1,5 +1,6 @@
 package tests;
 
+import Pages.ResultPage;
 import Pages.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,13 +12,15 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     public WebDriver driver;
-    public  SearchPage searchPage;
+    public SearchPage searchPage;
+    public ResultPage resultPage;
 
     @BeforeMethod
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         searchPage = new SearchPage(driver);
+        resultPage = new  ResultPage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.yandex.ru/");
