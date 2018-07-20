@@ -2,14 +2,13 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class ResultPage {
+public class ResultPage extends BasePage{
 
-    protected WebDriver driver;
+    //protected WebDriver driver;
 
     public ResultPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     private By result = By.cssSelector("a[accesskey=\"1\"]");

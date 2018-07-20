@@ -2,14 +2,14 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class SearchPage {
 
-    protected WebDriver driver;
+public class SearchPage extends BasePage{
+
+    //protected WebDriver driver;
 
     public SearchPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     private By searchString = By.cssSelector("input[id=\"text\"]");
