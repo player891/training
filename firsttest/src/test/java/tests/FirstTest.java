@@ -8,7 +8,7 @@ public class FirstTest extends BaseTest{
 
     @Test
     public void test(){
-        driver.get("https://www.yandex.ru/");
+        searchPage.openSearch();
         searchPage.search("Погода Пенза");
         Assert.assertTrue(resultPage.getLinkText().contains("Погода"));
 
